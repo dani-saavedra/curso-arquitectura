@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class TransaccionService {
@@ -28,5 +29,9 @@ public class TransaccionService {
         transaccion.setCuentaOrigen(transaccionDTO.getCuentaOrigen());
         transaccion.setCuentaDestino(transaccionDTO.getCuentaDestino());
         return transaccionRepository.save(transaccion);
+    }
+
+    public List<Transaccion> obtenerTodas() {
+        return transaccionRepository.findAll();
     }
 }

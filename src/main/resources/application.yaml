@@ -5,10 +5,10 @@
  # url: http://localhost:9292
 spring:
   application:
-    name: Diplomado2025
-  #jpa:
-   # hibernate:
-    #  ddl-auto: update
+    name: curso-arquitectura
+  jpa:
+    hibernate:
+      ddl-auto: validate
   datasource:
     url: jdbc:mysql://${MYSQL_URL}:3306/${MYSQL_DB}
     username: ${MYSQL_USERNAME}
