@@ -6,22 +6,24 @@ import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvide
 import au.com.dius.pact.provider.junitsupport.Provider;
 import au.com.dius.pact.provider.junitsupport.State;
 import au.com.dius.pact.provider.junitsupport.loader.PactBroker;
-import co.edu.unisabana.diplomado2025.pruebas.ServiceX;
-import co.edu.unisabana.diplomado2025.pruebas.UserDTO;
+import co.edu.unisabana.cursoarquitectura.pruebas.entity.User;
+import co.edu.unisabana.cursoarquitectura.pruebas.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@ActiveProfiles("test")
 @Provider("ProductService")
 @PactBroker(url = "http://localhost:9292")
 public class PactProviderTest {
 
     @MockitoBean
-    private ServiceX serviceX;
+    private ProductService productService;
 
     @TestTemplate
     @ExtendWith(PactVerificationInvocationContextProvider.class)
@@ -37,7 +39,7 @@ public class PactProviderTest {
 
     @State("El usuario existe en la base de datos")
     public void userExits() {
-        Mockito.when(serviceX.consultarUsuario()).thenReturn(new UserDTO("juan@example.com", "Juan Pérez", 1));
+        Mockito.when(productService.consultarUsuario(Mockito.any())).thenReturn(new User(1L, "Juan Pérez", "juan@example.com"));
     }
 
 }
