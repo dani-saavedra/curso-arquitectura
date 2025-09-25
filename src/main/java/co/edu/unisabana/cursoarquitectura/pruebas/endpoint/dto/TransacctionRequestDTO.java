@@ -1,4 +1,4 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.pruebas.endpoint.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

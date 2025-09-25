@@ -1,4 +1,4 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.pruebas.service;
 
 import org.springframework.stereotype.Service;
 

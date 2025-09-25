@@ -1,9 +1,8 @@
 package co.edu.unisabana.cursoarquitectura.integration;
 
-import co.edu.unisabana.cursoarquitectura.pruebas.Transaccion;
-import co.edu.unisabana.cursoarquitectura.pruebas.TransaccionRepository;
-import co.edu.unisabana.cursoarquitectura.pruebas.TransacctionRequestDTO;
-import org.junit.jupiter.api.Assertions;
+import co.edu.unisabana.cursoarquitectura.pruebas.entity.Transaccion;
+import co.edu.unisabana.cursoarquitectura.pruebas.repository.TransaccionRepository;
+import co.edu.unisabana.cursoarquitectura.pruebas.endpoint.dto.TransacctionRequestDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

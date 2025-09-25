@@ -1,6 +1,9 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.pruebas.endpoint.rest;
 
 
+import co.edu.unisabana.cursoarquitectura.pruebas.endpoint.dto.TransacctionRequestDTO;
+import co.edu.unisabana.cursoarquitectura.pruebas.entity.Transaccion;
+import co.edu.unisabana.cursoarquitectura.pruebas.service.TransaccionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

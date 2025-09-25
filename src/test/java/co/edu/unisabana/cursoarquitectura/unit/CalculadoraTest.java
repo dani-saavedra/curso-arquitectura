@@ -1,5 +1,6 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.unit;
 
+import co.edu.unisabana.cursoarquitectura.pruebas.service.Calculadora;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

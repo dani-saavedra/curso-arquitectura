@@ -1,5 +1,6 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.pruebas.repository;
 
+import co.edu.unisabana.cursoarquitectura.pruebas.entity.Transaccion;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.pruebas.service;
 
 public class Matricula {
 

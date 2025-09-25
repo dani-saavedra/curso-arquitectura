@@ -1,5 +1,8 @@
-package co.edu.unisabana.cursoarquitectura.pruebas;
+package co.edu.unisabana.cursoarquitectura.pruebas.service;
 
+import co.edu.unisabana.cursoarquitectura.pruebas.endpoint.dto.TransacctionRequestDTO;
+import co.edu.unisabana.cursoarquitectura.pruebas.entity.Transaccion;
+import co.edu.unisabana.cursoarquitectura.pruebas.repository.TransaccionRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
