@@ -1,0 +1,1 @@
+ALTER TABLE transaccion add IP VARCHAR(250);
