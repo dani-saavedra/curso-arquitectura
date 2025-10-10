@@ -15,7 +15,7 @@ class CalculadoraTest {
         //Preprar, ejecutar y VALIDAR.
         int resultado = calculadora.suma(2, 3);
 
-        Assertions.assertEquals(5, resultado);
+        Assertions.assertEquals(7, resultado);
 
         //Cuantas Unit test minimo necesitamos en nuestro código/método? (Complejidad Ciclomatica)
     }
