@@ -33,4 +33,10 @@ class DiscountServiceTest {
         double precioBoleta = discountService.calculatePrice(500, "regular");
         assertEquals(500, precioBoleta);
     }
+
+    @Test
+    void Dado_ClienteSuperVIP_Cuando_CalculatePrice_Entonces_DaDescuentoSiempre30() {
+        double precioBoleta = discountService.calculatePrice(1000, "superVIP");
+        assertEquals(700, precioBoleta);
+    }
 }

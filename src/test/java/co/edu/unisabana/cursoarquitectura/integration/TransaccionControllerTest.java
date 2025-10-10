@@ -46,3 +46,4 @@ public class TransaccionControllerTest {
         assertThat(transaccionRepository.findAll()).hasSize(1);
     }
 }
+//Object Relational Mapping

@@ -14,6 +14,9 @@ public class DiscountService {
             throw new IllegalArgumentException("Cliente no es digno de esta boleta ");
         }
         switch (customerType.toLowerCase()) {
+            case "supervip":
+                discount = 0.30;
+                break;
             case "vip":
                 if (originalPrice > 1000) {
                     discount = 0.20;
