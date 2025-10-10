@@ -23,5 +23,7 @@ jobs:
         name: Instalando lo mejor - gradle
       - name: Compilando ando
         run: ./gradlew build
+      - name: Mutation Test
+        run: ./gradlew pitest
 
 
