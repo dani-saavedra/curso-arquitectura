@@ -19,7 +19,7 @@ public class PagoController {
     @GetMapping(path = "/pagar/{producto}/{origen}")
     public String pagar(@PathVariable String producto, @PathVariable String origen) {
         pago.pagarProducto(producto, 12, 13, origen);
-        System.out.println("Comentario ")
+        System.out.println("Comentario ");
         return "todo bien";
     }
 
