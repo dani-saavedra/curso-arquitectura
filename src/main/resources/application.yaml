@@ -1,18 +1,18 @@
 #pact:
- # verifier:
-  #  publishResults: true
+# verifier:
+#  publishResults: true
 #pactbroker:
- # url: http://localhost:9292
+# url: http://localhost:9292
 spring:
   application:
-    name: curso-arquitectura
+    name: Diplomado2025
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
   datasource:
-    url: jdbc:mysql://${MYSQL_URL}:3306/${MYSQL_DB}
-    username: ${MYSQL_USERNAME}
-    password: ${MYSQL_PASSWORD}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
   flyway:
-    enabled: true
+    enabled: false
