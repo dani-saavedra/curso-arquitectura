@@ -1,0 +1,29 @@
+name: Continuos Integration
+on:
+  pull_request:
+    branches:
+      - master
+      - release
+      - main
+      - develop
+jobs:
+  build:
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        name: Descargando el repo
+
+      - name: Instalar Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - uses: gradle/gradle-build-action@v3
+        name: Instalando lo mejor - gradle
+      - name: Compilando ando
+        run: ./gradlew build
+      - name: Mutation Test
+        run: ./gradlew pitest
+
+
