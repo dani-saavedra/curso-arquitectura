@@ -10,7 +10,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /dev/curso(/|$)(.*)
+          - path: /development/curso(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:
