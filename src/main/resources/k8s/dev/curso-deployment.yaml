@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: curso
+  namespace: development
   labels:
     app: curso
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: curso
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: curso
-          image: danielsabana/curso:1.3.0
+          image: danielsabana/curso:1.2.0
           ports:
             - containerPort: 8080
           env:
@@ -27,11 +28,9 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 500Mi
-            limits:
-              cpu: 450m
+              memory: 600Mi
           startupProbe:
             httpGet:
               port: 8080
               path: /saludo
-            initialDelaySeconds: 30
+            initialDelaySeconds: 10

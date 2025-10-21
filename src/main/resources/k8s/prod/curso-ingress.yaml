@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: curso
+  namespace: prd
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
@@ -9,7 +10,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /curso(/|$)(.*)
+          - path: /prd/curso(/|$)(.*)
             pathType: ImplementationSpecific
             backend:
               service:

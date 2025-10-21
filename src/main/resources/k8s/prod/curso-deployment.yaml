@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curso
+  namespace: prd
+  labels:
+    app: curso
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: curso
+  template:
+    metadata:
+      labels:
+        app: curso
+    spec:
+      containers:
+        - name: curso
+          image: danielsabana/curso:1.3.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NOMBRE_POD
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          resources:
+            requests:
+              cpu: 200m
+              memory: 600Mi
+          startupProbe:
+            httpGet:
+              port: 8080
+              path: /saludo
+            initialDelaySeconds: 10

@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: curso
+  namespace: development
 spec:
   selector:
     app: curso

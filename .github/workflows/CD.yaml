@@ -1,11 +1,8 @@
-name: Continuos Integration
+name: Continuos Deployment
 on:
-  pull_request:
+  push:
     branches:
-      - master
-      - release
       - main
-      - develop
 jobs:
   build:
     timeout-minutes: 3
@@ -13,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         name: Descargando el repo
-
       - name: Instalar Java
         uses: actions/setup-java@v5
         with:
@@ -23,7 +19,14 @@ jobs:
         name: Instalando lo mejor - gradle
       - name: Compilando ando
         run: ./gradlew build
-      - name: Mutation Test
-        run: ./gradlew pitest
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: danielsabana/curso
+          tags: ${{ github.sha }}
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: danielsabana
+          password: Daniel.28
 
 
