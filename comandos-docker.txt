@@ -1,0 +1,7 @@
+--construir la imagen
+
+docker build -t curso-arquitectura:latest .
+
+-- correr el contenedor
+
+docker run -d -p 8080:8080 --name curso-arquitectura curso-arquitectura:latest
