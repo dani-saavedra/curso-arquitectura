@@ -17,4 +17,4 @@ spring:
   flyway:
     enabled: false
 
-pod: ${NOMBRE_POD}
+pod: ${NOMBRE_POD:default-pod}
